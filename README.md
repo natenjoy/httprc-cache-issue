@@ -84,3 +84,15 @@ CLIENT: cache get at   Mar  1 11:56:20.494
 CLIENT: cache value at Mar  1 11:56:20.494: count 3  
 ```
 
+To preview a proposed fix for the issue, clone the following into a directory that is sibling to the bug repro, e.g. `git clone -b acquire-sem-on-fetch https://github.com/natenjoy/httprc`. Ensure
+
+Then, add the following `go.work` file to the root of this repo, and run `go run main.go`
+
+```
+go 1.22.0
+
+use (
+	.
+	../natenjoy-httprc
+)
+```
